@@ -58,6 +58,38 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        dev {
+            dimension "app"
+            resValue "string", "app_name", "flutter_base_dev"
+            applicationId "com.example.flutter_base_dev"
+            flutter.target "lib/main_dev.dart"
+            versionCode 1
+            versionName "1.0.0"
+        }
+
+        stg {
+            dimension "app"
+            resValue "string", "app_name", "fluter_base_stg"
+            applicationId "com.example.flutter_base_stg"
+            flutter.target "lib/main_stg.dart"
+            versionCode 1
+            versionName "1.0.0"
+        }
+
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "flutter_base"
+            applicationId "com.example.flutter_base"
+            flutter.target "lib/main_prod.dart"
+            versionCode 1
+            versionName "1.0.0"
+        }
+    }
+
 }
 
 flutter {
